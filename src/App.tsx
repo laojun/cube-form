@@ -67,14 +67,17 @@ export default function App() {
             label: "性别", // 标签
             key: "gender", // 字段名，唯一的key，支持嵌套
             dataSource: {
-              static: [
-                { name: "女", value: 0 },
-                { name: "男", value: 1 },
-                { name: "???", value: 2 }
-              ],
+              // static: [
+              //   { name: "女", value: 0 },
+              //   { name: "男", value: 1 },
+              //   { name: "???", value: 2 }
+              // ],
               dynamic: {
                 api: "/api/get-options",
-                path: "data.list" // 接口中的列表路径，暂不考虑返回数据format的问题
+                path: "data.list", // 接口中的列表路径，暂不考虑返回数据format的问题
+                dataPath: "data.list",
+                valueKey: "value1",
+                nameKey: "name1"
               }
             },
             type: "select",
